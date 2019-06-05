@@ -1,0 +1,12 @@
+<template name="tabBar">
+<view class="tabBar">
+  <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="tabBar">
+    <view class="tabBar-item1">
+      <navigator open-type="redirect" url="{{item.pagePath}}">
+        <view><image class="icon tabbar-icon-size" src='{{item.iconPath}}'></image></view>
+        <view class="tabbar-icon-size {{item.current== 1 ? 'tabBartext' :''}}" >{{item.text}}</view>
+      </navigator>  
+    </view>
+  </block>
+</view>
+</template>
