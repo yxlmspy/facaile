@@ -1,0 +1,114 @@
+/* pages/login/login.wxss */
+@import "../hr/res/weui.wxss";
+page {
+  background-color: #fff;
+}
+
+.appIcon {
+  width: 100%;
+  height: 200rpx;
+  text-align: center;
+  vertical-align: center;
+  margin-top: 80rpx;
+  margin-bottom: 30rpx;
+}
+
+.appIcon image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+/*
+*  为框添加下划线
+*/
+
+.weui-select {
+  font-size: 0.8rem;
+  border-right: 0px solid#fff;
+  border-bottom: 2rpx solid#f0f0f0;
+  margin-left: 50rpx;
+  padding-left: 10px;
+  width: 90rpx;
+  text-align: left;
+  padding-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.weui-user-account {
+  font-size: 0.8rem;
+  border-bottom: 2rpx solid#f0f0f0;
+  width: 450rpx;
+  padding-bottom: 10rpx;
+  padding-left: 20rpx;
+}
+
+.weui-user-code {
+  font-size: 0.8rem;
+  padding: 2px 20rpx;
+  width: 660rpx;
+}
+
+.weui-get-code {
+  margin-top: -75rpx;
+  margin-right: 50rpx;
+}
+.weui-per-80 {
+  width:90%;
+  margin-left: 5%;
+}
+.weui-per-80::after {
+  content: "";
+  position: absolute;
+  width: 660rpx;
+  height: 2rpx;
+  background-color: #f0f0f0;
+  left: 10%;
+  margin-left: -10px;
+}
+.weui-btn-top {
+  margin-top: 20px;
+}
+.weui-code-btn {
+  width: 30%;
+  padding-top: 5px;
+  text-align: center;
+  padding-left: 10px;
+  border : 0px;
+}
+.weui-code-btn::before{
+  content: "";
+  position: absolute;
+  width: 2rpx;
+  height: 60rpx;
+  background-color: #e5e5e5;
+  margin-left: -15px;
+  margin-top: 2rpx;
+}
+.text-08 {
+  font-size: 0.7rem;
+  z-index: 100;
+}
+.only-one {
+  position: fixed;
+  bottom: 200rpx;
+  left: 50rpx;
+  font-size: .8rem;
+  color: #555;
+  letter-spacing: 1rpx;
+}
+.width-80 {
+  width: 70%;
+}
+.initSelect {
+  padding-bottom:5rpx;
+  margin-top: 6rpx;
+}
+/*  求职者注册 */
+.only-qiuzhi {
+  position: fixed;
+  bottom: 200rpx;
+  right: 50rpx;
+  font-size: .8rem;
+  color: #555;
+  letter-spacing: 1rpx;
+}

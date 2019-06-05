@@ -1,0 +1,56 @@
+<!--pages/login/login.wxml-->
+<view class="page margin_t_20">
+  <view class='appIcon'>
+    <image src="{{appicon}}"></image>
+  </view>
+  <view class=" weui-cells_after-title">
+    <view class="weui-cell weui-cell_select" style='width:87%;margin-left:8%;border-bottom:1px solid #e5e5e5;'>
+      <!-- <view class="weui-cell__hd" style="width: 105px">
+        <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+          <view class="weui-select initSelect">{{countryCodes[countryCodeIndex]}}</view>
+        </picker>
+      </view> -->
+      <view class="weui-cell__bd weui-cell__bd_in-select-before" style='padding:0'>
+        <input class="weui-input weui-user-account" style='border:0;padding:0' bindinput='getPhone' placeholder="请输入手机号码" />
+      </view>
+    </view>
+    <view class="weui-cell_input weui-cell_vcode weui-per-80" wx:if="{{isCode}}">
+      <view class="weui-cell__bd weui-flex">
+        <input class="weui-input weui-user-code width-80" value='{{userInputCode}}' bindinput='getCode' placeholder="请输入验证码" />
+        <view class="weui-vcode-btn text-0d6fb8 text-08 weui-code-btn" bindtap='getPhoneCode'>{{get_code_btn_text}}</view>
+      </view>
+    </view>
+    <view class="weui-cell_input weui-cell_vcode weui-per-80" wx:else>
+      <view class="weui-cell__bd">
+        <input class="weui-input weui-user-code" type='text' bindinput='getPassword' placeholder="请输入密码" value='{{userPassword}}'/>
+      </view>
+    </view>
+  </view>
+  <view class="weui-btn-area weui-btn-top">
+    <button class="weui-btn bg-color-0d6fb8" type="primary" bindtap="login">进入发才乐</button>
+  </view>
+</view>
+<checkbox-group bindchange="bindAgreeChange" hidden="true">
+  <label class="weui-agree" for="weuiAgree">
+    <view class="weui-agree__text">
+      <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+      <view class="weui-agree__checkbox-icon">
+        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+      </view>
+      进入发才乐您必须同意
+      <view class="weui-agree__link" bindtap='fnloofxieyi'>《发才乐用户协议》</view>
+    </view>
+  </label>
+</checkbox-group>
+<view class='only-one' bindtap='changeType'>
+  {{loginType}}
+</view>
+<view class='only-qiuzhi' wx:if="{{countryCodes[countryCodeIndex] == '求职者'}}" bindtap='resizeUser'>
+  点击注册
+</view>
+<!--获取微信授权-->
+<!--dialog-->
+<view class="container" wx:if="{{dialog.isDialog}}">
+  <dialog id='dialog' cancelText='不同意' confirmText='同意' isGetnumber='{{dialog.isGetnumber}}' phone='{{dialog.phone}}' isGetPhone='{{dialog.isGetPhone}}' bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent">
+  </dialog>
+</view>
